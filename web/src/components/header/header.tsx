@@ -23,7 +23,7 @@ export default function Header() {
 
 
   return (
-    <header className={`header ${isNavOpen ? "mobile-nav-active" : ""}`}>
+    <header className={`header paper-texture ${isNavOpen ? "mobile-nav-active" : ""}`}>
       <div className="logo">
         <div className="menu">
           <Image src={menu} 

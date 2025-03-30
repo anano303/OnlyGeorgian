@@ -55,7 +55,7 @@ export function AddToCartButton({
 
   return (
     <div className="cart-actions">
-      <div className="quantity-container">
+      {/* <div className="quantity-container">
         <button
           className="quantity-button"
           onClick={decreaseQuantity}
@@ -71,7 +71,7 @@ export function AddToCartButton({
         >
           +
         </button>
-      </div>
+      </div> */}
 
       <button
         className={`addButtonCart ${className}`}
@@ -79,7 +79,7 @@ export function AddToCartButton({
         onClick={handleAddToCart}
       >
         {/* <HiOutlineShoppingBag size={20} /> */}
-        <span>🛒</span> 
+        {/* <span>🛒</span>  */}
         {isOutOfStock ? "არ არის მარაგში" : loading ? "Adding..." : "კალათაში დამატება"}
       </button>
     </div>

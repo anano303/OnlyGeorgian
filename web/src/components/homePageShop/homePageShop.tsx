@@ -50,13 +50,13 @@ export default function HomePageShop() {
   return (
     <div className="container">
       <div className="content">
-        <h1 className="title">ნამუშევრები </h1>
+        {/* <h1 className="title">ნამუშევრები </h1>
 
         <ProductFilters 
           products={products}
           onCategoryChange={setSelectedCategory}
           onArtistChange={setSelectedArtist}
-        />
+        /> */}
         <ProductGrid products={filteredProducts} />
 
         <div className="see-more">

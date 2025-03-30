@@ -31,28 +31,28 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="product-info">
           <div className="product-name-rating">
           <h3 className="product-name">{product.name}</h3>
-          <div className="product-rating">
+          {/* <div className="product-rating">
                 <span>⭐</span>
                 <span className="rating-text" style={{ whiteSpace: "nowrap" }}>
                   {product.rating.toFixed(1)} ({product.numReviews})
                 </span>
+              </div> */}
               </div>
-              </div>
-              <p style={{ margin: "5px 15px 0px 15px", color:"#153754" }}>{product.brand}</p>
+              <p style={{ color:"#000" }}>{product.brand}</p>
              
           <div className="product-details">
             <div className="priceAndRaiting">
-              <h3 className="product-price">{product.price} ₾ </h3>
-              
+              <h3 className="product-price">{product.price} ლარი </h3>
+              <AddToCartButton
+        productId={product._id}
+        countInStock={product.countInStock}
+        className=""
+      />
             </div>
           </div>
         </div>
       </Link>
-      <AddToCartButton
-        productId={product._id}
-        countInStock={product.countInStock}
-        className="addButtonCart"
-      />
+     
     </div>
   );
 }
