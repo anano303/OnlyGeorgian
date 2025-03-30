@@ -1,4 +1,4 @@
-import HomePageForum from "@/components/homePageForum/homePageForum";
+// import HomePageForum from "@/components/homePageForum/homePageForum";
 import HomePagesHead from "@/components/homePagesHead/homePagesHead";
 import HomePageShop from "@/components/homePageShop/homePageShop";
 // import Navbar from "@/components/navbar/navbar";
