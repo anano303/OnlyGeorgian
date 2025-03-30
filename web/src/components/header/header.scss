@@ -5,11 +5,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #012645;
+background: linear-gradient(180deg, #E0C9A6 0%, #A86E16 100%);
+
 
   .logo {
+    display: flex;
     margin-right: 5%;
-    align-self: center;
+    align-items: center;
+    gap: 50px;
     a {
       text-decoration: none;
       font-size: 24px;

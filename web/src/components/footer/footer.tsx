@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <h3 className="footer-title">SoulArt</h3>
+          <h3 className="footer-title">OnlyGeorgian</h3>
           <p className="footer-description">
             Discover and purchase unique art pieces from talented artists around the world. Create your personal gallery and become a collector or artist.
           </p>
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SoulArt. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} OnlyGeorgian. All rights reserved.</p>
       </div>
     </footer>
   );

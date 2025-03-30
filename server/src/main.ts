@@ -52,8 +52,8 @@ async function bootstrap() {
   app.use('/favicon.ico', (req, res) => res.status(204).send());
 
   const config = new DocumentBuilder()
-    .setTitle('SoulArt  API')
-    .setDescription('SoulArt E-commerce REST API')
+    .setTitle('OnlyGeorgian  API')
+    .setDescription('OnlyGeorgian E-commerce REST API')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

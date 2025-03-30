@@ -12,29 +12,29 @@ import Header from "@/components/header/header";
 import SiteTimer from "@/components/SiteTimer/SiteTimer";
 
 export const metadata: Metadata = {
-  title: "SoulArt",
+  title: "OnlyGeorgian",
   description:
-    "SoulArt - ნახატების ონლაინ პლატფორმა, სადაც შეგიძლიათ გაყიდოთ და შეიძინოთ უნიკალური ხელოვნების ნიმუშები. შექმენით პირადი გალერეა და გახდით მხატვარი ან კოლექციონერი.",
+    "OnlyGeorgian - ნახატების ონლაინ პლატფორმა, სადაც შეგიძლიათ გაყიდოთ და შეიძინოთ უნიკალური ხელოვნების ნიმუშები. შექმენით პირადი გალერეა და გახდით მხატვარი ან კოლექციონერი.",
   openGraph: {
     type: 'website',
     locale: 'ka_GE',
-    url: 'https://soulart.ge/',
-    siteName: 'soulart',
-    title: 'soulart',
+    url: 'https://onlyGeorgian.ge/',
+    siteName: 'onlyGeorgian',
+    title: 'onlyGeorgian',
     images: [
       {
         url: '/van%20gog.jpg',
         width: 1200,
         height: 630,
-        alt: 'SoulArt Sharing Image',
+        alt: 'onlyGeorgian Sharing Image',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SoulArt',
+    title: 'onlyGeorgian',
     description:
-      'SoulArt - ნახატების ონლაინ პლატფორმა უნიკალური ხელოვნების ნიმუშებისთვის.',
+      'onlyGeorgian - ნახატების ონლაინ პლატფორმა უნიკალური ხელოვნების ნიმუშებისთვის.',
     images: ['/van%20gog.jpg'],
   },
 };

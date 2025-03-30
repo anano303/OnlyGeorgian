@@ -8,7 +8,7 @@ export default function AboutPage() {
       
       <div className="about-section">
         <p className="about-description">
-          SoulArt არის პლატფორმა, რომელიც აერთიანებს მხატვრებს და ხელოვნების მოყვარულებს. 
+          OnlyGeorgian არის პლატფორმა, რომელიც აერთიანებს მხატვრებს და ხელოვნების მოყვარულებს. 
           ჩვენი მიზანია შევქმნათ სივრცე, სადაც შეძლებთ გაყიდოთ და შეიძინოთ უნიკალური 
           ხელოვნების ნიმუშები, შექმნათ პირადი გალერეა და გახდეთ კოლექციონერი ან მხატვარი.
         </p>
@@ -34,14 +34,14 @@ export default function AboutPage() {
       <div className="about-section">
         <h2 className="about-subtitle">ხედვა</h2>
         <p>
-          SoulArt არის პირველი მსგავსი პლატფორმა საქართველოში, რომელიც აერთიანებს 
+          OnlyGeorgian არის პირველი მსგავსი პლატფორმა საქართველოში, რომელიც აერთიანებს 
           ხელოვნების სამყაროს. ჩვენი ხედვაა გავხდეთ ხელოვნების მოყვარულთა და 
           მხატვართა მთავარი ადგილი.
         </p>
       </div>
 
       <div className="about-section about-highlight">
-        <h2 className="about-subtitle">რატომ SoulArt?</h2>
+        <h2 className="about-subtitle">რატომ OnlyGeorgian ?</h2>
         <p>
           საქართველოში მსგავსი პლატფორმა არ არსებობს. ჩვენ ვქმნით უნიკალურ 
           შესაძლებლობას, სადაც ხელოვნება და ტექნოლოგია ერთმანეთს ხვდება.

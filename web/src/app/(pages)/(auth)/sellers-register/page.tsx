@@ -5,7 +5,7 @@ export default function SellerRegisterPage() {
   return (
     <AuthLayout
       title="Seller Registration"
-      subtitle="Register your store and start selling on SoulArt!"
+      subtitle="Register your store and start selling on OnlyGeorgian!"
     >
       <SellerRegisterForm />
     </AuthLayout>

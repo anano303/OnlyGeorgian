@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useUser } from "@/modules/auth/hooks/use-user";
 import { useLogout } from "@/modules/auth/hooks/use-auth";
 import "./user-menu.css";
+import frame from "../../assets/Images/Frame 63.png";
 import { Role } from "@/types/role";
+import Image from "next/image";
 // import hunterIcon from "../../assets/icons/hunter.png";
 // import Image from "next/image";
 
@@ -36,9 +38,14 @@ export default function UserMenu() {
     return (
       <Link href="/login" className="button">
         <span className="icon">
-          🎭{" "}
+         <Image 
+          src={frame}
+          alt="authFrame"
+          width={30}
+          height={42}
+         />
           {/* <Image src={hunterIcon} alt="hunterIcon" width={28} height={28} /> */}
-          შესვლა{" "}
+        <p> ავტორიზაცია/ რეგისტრაცია</p>  {" "}
         </span>
       </Link>
     );
