@@ -12,7 +12,7 @@ const Home = () => {
       <TopItems/>
       {/* <Navbar/> */}
       <HomePageShop/>
-      <HomePageForum/>
+      {/* <HomePageForum/> */}
     </div>
   );
 };
