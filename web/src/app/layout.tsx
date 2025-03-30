@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'onlyGeorgian',
     images: [
       {
-        url: '/van%20gog.jpg',
+        url: '/mainImg.png',
         width: 1200,
         height: 630,
         alt: 'onlyGeorgian Sharing Image',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'onlyGeorgian',
     description:
       'onlyGeorgian - ნახატების ონლაინ პლატფორმა უნიკალური ხელოვნების ნიმუშებისთვის.',
-    images: ['/van%20gog.jpg'],
+    images: ['/mainImg.png'],
   },
 };
 
