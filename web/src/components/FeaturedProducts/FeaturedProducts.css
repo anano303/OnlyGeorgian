@@ -31,7 +31,6 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -84,11 +83,10 @@
 
 .featured-product-button {
   background-color: white;
-  
   color: #8b0000;
   padding: 10px 20px;
   font-weight: bold;
- width: 100%;
+  width: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
