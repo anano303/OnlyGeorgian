@@ -36,6 +36,13 @@
   transform: scale(0.98); /* ზომის შემცირება */
 }
 
+@media screen and (max-width: 768px) {
+  .mainOfferImages {
+    overflow-x: scroll;
+    max-width: 80%;
+  }
+  
+}
 
 
 

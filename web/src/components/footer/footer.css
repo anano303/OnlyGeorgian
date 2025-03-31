@@ -1,29 +1,34 @@
 .footer-container {
-  background: linear-gradient(135deg, #012645, #014f86);
-  color: #f8f9fa;
+background-color: #FDF2DB;
+  color: rgba(0, 0, 0, 1);
+
   padding: 2rem 1rem;
   font-family: 'Satoshi', sans-serif;
 }
 
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
+ flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 250px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
 }
 
 .footer-title {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #f8f9fa;
+  color: rgba(0, 0, 0, 1);
 }
 
 .footer-description {
@@ -37,6 +42,25 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #f8f9fa;
+  text-decoration: none;
+}
+.buttonReg {
+  background: rgba(149, 1, 1, 1);
+padding: 15px 40px;
+color: white;
+text-decoration: none;
+}
+
+ 
+
+
+.buttonAuth{
+  border: 2px solid rgba(29, 43, 83, 1);
+  background: transparent;
+  padding: 15px 40px;
+color: rgba(29, 43, 83, 1);
+text-decoration: none;
+
 }
 
 .footer-links {
@@ -82,6 +106,14 @@
   margin-top: 2rem;
   font-size: 0.9rem;
   color: #d1e7f3;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 1400px; /* Optional: Set a maximum width */
+  display: block;
+  margin: 0 auto; /* Center the image */
 }
 
 /* @media (max-width: 1050px) and (min-width: 768px) {
