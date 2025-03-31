@@ -9,43 +9,17 @@ import { Product } from "@/types";
 // import { ProductFilters } from "@/modules/products/components/product-filters";
 
 export default function HomePageShop() {
-  const [products, setProducts] = useState<Product[]>([]);
+  // const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  // const [selectedCategory, setSelectedCategory] = useState('');
-  // const [selectedArtist, setSelectedArtist] = useState('');
 
   useEffect(() => {
     async function fetchProducts() {
       const { items } = await getProducts(1, 3); // Fetch only 4 products
-      setProducts(items);
+      // setProducts(items);
       setFilteredProducts(items);
     }
     fetchProducts();
   }, []);
-
-  // useEffect(() => {
-  //   let filtered = [...products];
-    
-  //   if (selectedCategory) {
-  //     filtered = filtered.filter((product) => product.category === selectedCategory);
-  //   }
-
-  //   if (selectedArtist) {
-  //     filtered = filtered.filter((product) => 
-  //       product.brand && product.brand.toLowerCase() === selectedArtist.toLowerCase()
-  //     );
-  //   }
-
-  //   console.log('Filtering products:', {
-  //     total: products.length,
-  //     filtered: filtered.length,
-  //     category: selectedCategory,
-  //     artist: selectedArtist,
-  //     filteredProducts: filtered
-  //   });
-
-  //   setFilteredProducts(filtered);
-  // }, [selectedCategory, selectedArtist, products]);
 
   return (
     <div className="container">
@@ -58,16 +32,14 @@ export default function HomePageShop() {
           onArtistChange={setSelectedArtist}
         /> */}
         <div className="titleSeemore">
-        <h3>ახალი დამატებული ნივთები</h3>
-        <div className="see-more">
-          <Link href="/shop">
-            <button className="see-more-btn">ნახე მეტი</button>
-          </Link>
-        </div>
+          <h3>ახალი დამატებული ნივთები</h3>
+          <div className="see-more">
+            <Link href="/shop">
+              <button className="see-more-btn">ნახე მეტი</button>
+            </Link>
+          </div>
         </div>
         <ProductGrid products={filteredProducts} />
-
-        
       </div>
     </div>
   );
