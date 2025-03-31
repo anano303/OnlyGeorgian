@@ -93,7 +93,9 @@ export function ProductFilters({
     if (initialCategory !== 'all') {
       handleCategoryChange(initialCategory);
     }
-  }, [initialCategory]);
+  }, [
+    // handleCategoryChange // Commented to avoid warning
+  ]);
 
   return (
     <div className="filters-container">

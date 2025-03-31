@@ -12,12 +12,19 @@ body {
   background-color: #FDF2DB;
  
 }
-main{
+header {
+  width: 100vw;
+}
+/* main{
   min-height: 100vh;
+  width: 100vw;
+}
+footer{
+width: 100vw;
 }
 .container {
  width: 100%;
-}
+} */
 
 .content {
   display: flex;

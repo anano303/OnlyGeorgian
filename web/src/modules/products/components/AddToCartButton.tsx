@@ -45,13 +45,13 @@ export function AddToCartButton({
     }
   };
 
-  const increaseQuantity = () => {
-    if (quantity < countInStock) setQuantity(quantity + 1);
-  };
+  // const increaseQuantity = () => {
+  //   if (quantity < countInStock) setQuantity(quantity + 1);
+  // };
 
-  const decreaseQuantity = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
-  };
+  // const decreaseQuantity = () => {
+  //   if (quantity > 1) setQuantity(quantity - 1);
+  // };
 
   return (
     <div className="cart-actions">

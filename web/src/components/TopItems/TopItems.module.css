@@ -165,3 +165,38 @@
   box-shadow: 7px -6px 10px 0px #012645;
   border-bottom: 10px solid saddlebrown;
 }
+.gridContainer {
+  display: flex
+  ;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      row-gap: 30px;
+      column-gap: min(15px);
+      width: 97%;
+      margin-bottom: 50px;
+}
+.titleSeemore{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 91%;
+  margin-bottom: 20px;
+  margin: 0% 5%;
+  color:   rgba(0, 0, 0, 1);
+
+  margin-bottom: 30px;
+  margin-top: 30px;
+  
+}
+
+.see-more{
+  margin-right: 10%;
+}
+.seeMoreBtn{
+  border: none;
+    background: transparent;
+      color:  rgba(149, 1, 1, 1);
+    font-weight: bold;
+    float: right;
+    text-decoration: underline;
+}
