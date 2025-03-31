@@ -14,11 +14,11 @@ import SiteTimer from "@/components/SiteTimer/SiteTimer";
 export const metadata: Metadata = {
   title: "OnlyGeorgian",
   description:
-    "OnlyGeorgian - ნახატების ონლაინ პლატფორმა, სადაც შეგიძლიათ გაყიდოთ და შეიძინოთ უნიკალური ხელოვნების ნიმუშები. შექმენით პირადი გალერეა და გახდით მხატვარი ან კოლექციონერი.",
+    "OnlyGeorgian - მხოლოდ საქართველოში წარმოებული პროდუქციის ონლაინ პლატფორმა, სადაც შეგიძლიათ გაყიდოთ და შეიძინოთ მხოლოდ ქართული პროდუქცია",
   openGraph: {
     type: 'website',
     locale: 'ka_GE',
-    url: 'https://onlyGeorgian.ge/',
+    url: 'https://only-georgian.vercel.app/',
     siteName: 'onlyGeorgian',
     title: 'onlyGeorgian',
     images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'onlyGeorgian',
     description:
-      'onlyGeorgian - ნახატების ონლაინ პლატფორმა უნიკალური ხელოვნების ნიმუშებისთვის.',
+      'onlyGeorgian - მხოლოდ ქართული პროდუქციის ონლაინ პლატფორმა',
     images: ['/mainImg.png'],
   },
 };
