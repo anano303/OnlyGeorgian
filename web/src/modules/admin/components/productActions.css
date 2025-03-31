@@ -3,6 +3,20 @@
   gap: 5px;
 }
 .space-x-2 button {
-  background-color: black;
-  color: white;
+  color: green;
+    border: none;
+    background: transparent;
+}
+
+.trash{
+  color: red;
+}
+.edit {
+  color: blue;
+}
+.approve {
+  color: green;
+}
+.reject {
+  color: rgb(252, 89, 8);
 }
