@@ -68,5 +68,5 @@
 }
 
 .review-submit:hover:not(:disabled) {
-  background-color: #2563eb;
+  background-color: rgba(149, 1, 1, 1);
 }
