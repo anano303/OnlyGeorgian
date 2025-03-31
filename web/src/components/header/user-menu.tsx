@@ -54,7 +54,7 @@ export default function UserMenu() {
   return (
     <div className="dropdown" ref={menuRef}>
       <button onClick={() => setIsOpen(!isOpen)} className="button">
-        <span className="icon"></span> {user.name}
+        <span className="icon">🧑</span> {user.name}
       </button>
       {isOpen && (
         <div className="dropdown-menu">
