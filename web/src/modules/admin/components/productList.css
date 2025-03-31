@@ -1,5 +1,5 @@
 .prd-card {
-  background: white;
+  background: #FDF2DB;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -37,13 +37,13 @@
 
 .prd-btn {
   background-color: #3b82f6;
-  color: white;
+  color: #FDF2DB;
   border: none;
 }
 
 .prd-btn-outline {
-  background: white;
-  border: 1px solid #d1d5db;
+  background: #FDF2DB;
+  border: 1px solid #FDF2DB;
   color: #374151;
 }
 
@@ -106,7 +106,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background: white;
+  background: #FDF2DB;
    cursor: url('/brush.png'), pointer; 
 }
 

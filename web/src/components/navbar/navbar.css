@@ -37,7 +37,7 @@
     transform: translateX(-20px);
     transition: all 0.3s ease;
     white-space: nowrap;
-    background: white;
+    background: #FDF2DB;
     padding: 5px 10px;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);

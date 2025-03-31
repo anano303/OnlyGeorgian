@@ -96,7 +96,7 @@ input:focus {
 }
 
 .separator-text {
-  background: white;
+  background: #FDF2DB;
   padding: 0 10px;
   position: relative;
   z-index: 1;

@@ -6,7 +6,7 @@
 }
 
 .hero-section {
-  position: relative;
+  position: relative; /* Ensure it has a stacking context */
   height: 500px;
   background-image: url("../../assets/Images/mainImg.png");
   background-size: cover;
@@ -17,8 +17,9 @@
   justify-content: center;
   align-items: end;
   margin-bottom: 150px;
+  z-index: 1; /* Lower z-index to ensure dropdown is above */
+  overflow: visible; /* Ensure it does not clip child elements */
 }
-
 
 .mainOfferImages {
   display: flex;
