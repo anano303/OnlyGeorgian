@@ -15,16 +15,24 @@
   font-size: 20px;
   color: rgba(149, 1, 1, 1);
   font-family: FiraGO;
-font-weight: 500;
-font-size: 14px;
-line-height: 100%;
-letter-spacing: 0%;
-text-wrap: wrap;
-display: flex;
-gap: 15px;
-align-items: center;
-margin-left: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-wrap: wrap;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 10px;
+}
 
+.icon img {
+  transition: transform 0.5s ease-in-out; /* Smooth animation */
+  transform-origin: left center; /* Set the pivot point to the left */
+}
+
+.icon:hover img {
+  transform: perspective(500px) rotateY(50deg); /* Create the door-opening effect */
 }
 
 .dropdown {
