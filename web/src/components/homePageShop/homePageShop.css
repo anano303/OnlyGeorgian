@@ -16,15 +16,26 @@
   gap: 24px;
   padding-bottom: 50px;
 }
+.titleSeemore{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  margin: 0% 5%;
+  color:  rgba(149, 1, 1, 1);
+  
+}
 .see-more{
-  margin-right: 4%;
+  margin-right: 10%;
 }
 .see-more-btn{
   border: none;
     background: transparent;
-    color: #012645;
+      color:  rgba(149, 1, 1, 1);
     font-weight: bold;
     float: right;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 1200px) {

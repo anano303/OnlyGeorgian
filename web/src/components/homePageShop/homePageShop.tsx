@@ -6,7 +6,7 @@ import "./homePageShop.css";
 import { ProductGrid } from "@/modules/products/components/product-grid";
 import { getProducts } from "@/modules/products/api/get-products";
 import { Product } from "@/types";
-import { ProductFilters } from "@/modules/products/components/product-filters";
+// import { ProductFilters } from "@/modules/products/components/product-filters";
 
 export default function HomePageShop() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -16,7 +16,7 @@ export default function HomePageShop() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const { items } = await getProducts(1, 4); // Fetch only 4 products
+      const { items } = await getProducts(1, 3); // Fetch only 4 products
       setProducts(items);
       setFilteredProducts(items);
     }
@@ -57,13 +57,17 @@ export default function HomePageShop() {
           onCategoryChange={setSelectedCategory}
           onArtistChange={setSelectedArtist}
         /> */}
-        <ProductGrid products={filteredProducts} />
-
+        <div className="titleSeemore">
+        <h3>ყველაზე გაყიდვადი</h3>
         <div className="see-more">
           <Link href="/shop">
             <button className="see-more-btn">See More</button>
           </Link>
         </div>
+        </div>
+        <ProductGrid products={filteredProducts} />
+
+        
       </div>
     </div>
   );
