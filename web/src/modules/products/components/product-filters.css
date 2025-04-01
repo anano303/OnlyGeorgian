@@ -30,7 +30,7 @@
 .filter-options.scrollable {
   max-height: 200px;
   overflow-y: auto;
-  background: white;
+  background: #FDF2DB;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
   margin-top: 0.25rem;
@@ -65,7 +65,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid #012645;
   border-radius: 20px;
-  background: white;
+  background: #FDF2DB;
   color: #012645;
   font-size: 0.9rem;
   cursor: url('/brush.png'), pointer; 
@@ -91,7 +91,7 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  background: white;
+  background: #FDF2DB;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
   padding: 0.5rem;

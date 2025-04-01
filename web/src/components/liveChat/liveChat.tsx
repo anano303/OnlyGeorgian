@@ -11,6 +11,8 @@ const LiveChat = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
+    console.log(selectedFile)
+    
     const toggleChat = () => {
         setIsOpen(!isOpen);
     };

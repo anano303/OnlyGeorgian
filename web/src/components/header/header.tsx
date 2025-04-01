@@ -13,12 +13,12 @@ import UserMenu from "./user-menu";
 import SearchBox from "../SearchBox/search-box";
 
 export default function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen] = useState(false);
 
 
-  const toggleNav = () => {
-    setIsNavOpen((prevState) => !prevState); // Toggle navigation visibility
-  };
+  // const toggleNav = () => {
+  //   setIsNavOpen((prevState) => !prevState); // Toggle navigation visibility
+  // };
 
 
 
@@ -53,11 +53,11 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="mobile-nav-btn" onClick={toggleNav}>
+      {/* <div className="mobile-nav-btn" onClick={toggleNav}>
         <span className={`hamburger-icon ${isNavOpen ? "close" : ""}`}>
           {isNavOpen ? "×" : "☰"}
         </span>
-      </div>
+      </div> */}
     </header>
   );
 }

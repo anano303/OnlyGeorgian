@@ -4,6 +4,8 @@ background-color: #FDF2DB;
 
   padding: 2rem 1rem;
   font-family: 'Satoshi', sans-serif;
+  border-top: 5px dotted rgba(149, 1, 1, 1);
+  margin-top: 30px;
 }
 
 .footer-content {
