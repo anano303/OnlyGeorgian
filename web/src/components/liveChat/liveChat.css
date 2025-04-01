@@ -1,7 +1,7 @@
 .live-chat-container {
     position: fixed;
     bottom: 50vh;
-    right: 20px;
+    right: 7%;
     z-index: 1000;
     
 }

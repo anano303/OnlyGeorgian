@@ -1,10 +1,14 @@
 .featured-products-container {
-  padding: 40px;
-  background-color: #8b0000; /* Deep red background */
-  margin: 50px auto;
+  background-image: url('../../assets/Images/salesbg.png'); /* Replace with your image path */
+  padding: 180px 40px; /* Add extra padding to the top and bottom */
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Ensure the background scales with the container */
+  background-position: top center; /* Align the background */
   max-width: 100%;
   color: white;
   position: relative;
+  min-height: auto; /* Allow height to grow with content */
+  
 }
 
 .featured-products-header {

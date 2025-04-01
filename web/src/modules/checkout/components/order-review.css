@@ -29,8 +29,8 @@
   color: #6c6c6c;
 }
 
-.order-items {
-  space-y: 16px;
+.order-items > * + * {
+  margin-top: 16px;
 }
 
 .order-item {
