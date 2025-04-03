@@ -15,7 +15,10 @@ export async function fetchWithAuth(url: string, config: RequestInit = {}) {
         ...headers,
         "Content-Type": "application/json",
         ...(accessToken ? { "Authorization": `Bearer ${accessToken}` } : {}),
+        "Origin": typeof window !== 'undefined' ? window.location.origin : 'https://only-georgian.vercel.app',
       },
+      credentials: 'include',
+      mode: 'cors',
     });
   };
 

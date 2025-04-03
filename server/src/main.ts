@@ -14,24 +14,17 @@ async function bootstrap() {
 
   app.use(helmet());
   app.use(cookieParser());
-  //   app.use(cors({
-  //   origin: process.env.ALLOWED_ORIGINS?.split(',') || 'http://localhost:3000',
-  //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  //   credentials: true,
-  //   allowedHeaders: ['Content-Type', 'Authorization'],
-  // }));
 
-  const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || 'https://soul-art.vercel.app';
-  console.log('Allowed Origins:', allowedOrigins);
-
+  // Configure CORS
   app.enableCors({
-    origin:
-      process.env.ALLOWED_ORIGINS?.split(',') || 'https://soul-art.vercel.app',
-
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    origin: [
+      'https://only-georgian.vercel.app',
+      'https://www.only-georgian.vercel.app',
+      'http://localhost:3000'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization', 'forum-id', 'file-id', 'product-id'],
-    optionsSuccessStatus: 204,
+    allowedHeaders: ['Content-Type', 'Authorization', 'forum-id']
   });
 
   app.enableVersioning({
