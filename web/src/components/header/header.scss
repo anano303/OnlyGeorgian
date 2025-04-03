@@ -139,7 +139,7 @@ header {
     .auth-cart {
       display: flex;
       .d-none {
-        display: none;
+        display: block;
       }
       a {
         padding: 10px;

@@ -7,7 +7,6 @@ export const apiClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     'Content-Type': 'application/json',
-    'Origin': typeof window !== 'undefined' ? window.location.origin : 'https://only-georgian.vercel.app',
   },
   // Important for working with cookies in cross-domain requests
   withCredentials: true,
