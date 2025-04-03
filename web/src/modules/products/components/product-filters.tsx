@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Search } from 'lucide-react';
 import './product-filters.css';
 import { Product } from '@/types';
@@ -59,19 +59,8 @@ export function ProductFilters({
     }
   };
 
-  const handleCategoryChange = (category: string) => {
-    console.log('Changing category to:', category); // Debug log
-    const newCategory = category === 'all' ? '' : category;
-    setSelectedCategory(category);
-    onCategoryChange(newCategory);
-
-    // Reset artist filter when changing category
-    if (selectedArtist !== 'all') {
-      handleArtistChange('all');
-    }
-  };
-
-  const handleArtistChange = (artist: string) => {
+  // Define handleArtistChange first, so it can be included in handleCategoryChange dependencies
+  const handleArtistChange = useCallback((artist: string) => {
     const newArtist = artist === 'all' ? '' : artist;
     setSelectedArtist(artist);
     onArtistChange(newArtist);
@@ -81,7 +70,22 @@ export function ProductFilters({
       setSelectedCategory('all');
       onCategoryChange('');
     }
-  };
+  }, [onArtistChange, selectedCategory, onCategoryChange]);
+
+  // Now use handleArtistChange in the dependencies array
+  const handleCategoryChange = useCallback((category: string) => {
+    console.log('Changing category to:', category); // Debug log
+    const newCategory = category === 'all' ? '' : category;
+    setSelectedCategory(category);
+    if (onCategoryChange) {
+      onCategoryChange(newCategory);
+    }
+
+    // Reset artist filter when changing category
+    if (selectedArtist !== 'all') {
+      handleArtistChange('all');
+    }
+  }, [onCategoryChange, selectedArtist, handleArtistChange]);
 
   const handleArtistClick = (brand: string) => {
     setSelectedArtist(brand);
@@ -93,7 +97,7 @@ export function ProductFilters({
     if (initialCategory !== 'all') {
       handleCategoryChange(initialCategory);
     }
-  }, [handleCategoryChange, initialCategory]); // Added missing dependencies
+  }, [initialCategory, handleCategoryChange]);
 
   return (
     <div className="filters-container">

@@ -38,7 +38,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [error, setError] = useState<string | null>(null);
   const { user, isLoggedIn } = useAuth();
 
-  const loadCart = async () => {
+  const loadCart = React.useCallback(async () => {
     // Skip loading if user is not authenticated
     if (!isAuthenticated() || !isLoggedIn) {
       console.log('User not authenticated, skipping cart load');
@@ -74,7 +74,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [isLoggedIn]);
 
   const addToCart = async (productId: string, quantity = 1) => {
     // Check if user is logged in before proceeding
@@ -196,7 +196,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       console.log('User is not logged in, clearing cart data');
       setCartItems([]);
     }
-  }, [isLoggedIn, user?.id]);
+  }, [isLoggedIn, user?.id, loadCart]); // Added loadCart to dependencies
 
   return (
     <CartContext.Provider

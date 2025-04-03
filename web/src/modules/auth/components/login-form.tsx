@@ -23,7 +23,7 @@ interface ApiError {
 }
 
 export function LoginForm() {
-  const { mutate: login, isPending } = useLogin();
+  const { mutate: login, isLoading } = useLogin(); // Changed from isPending to isLoading
   const [loginError, setLoginError] = useState<string | null>(null);
   const router = useRouter();
   const [returnUrl, setReturnUrl] = useState("/");
@@ -97,8 +97,12 @@ export function LoginForm() {
           </div>
         )}
 
-        <button type="submit" className="login-button">
-          {isPending ? <span className="loading-spinner"></span> : "Sign in"}
+        <button
+          type="submit"
+          className="login-button"
+          disabled={isLoading}
+        >
+          {isLoading ? <span className="loading-spinner"></span> : "Sign in"}
         </button>
 
         <div className="separator">

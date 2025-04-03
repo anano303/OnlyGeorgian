@@ -1,60 +1,159 @@
-"use client";
+'use client';
 
-import { useQuery } from "@tanstack/react-query";
-import { fetchWithAuth } from "@/lib/fetch-with-auth";
-import { OrderHistory } from "@/modules/profile/components/order-history";
-import { useUser } from "@/modules/auth/hooks/use-user";
-import Link from "next/link";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { fetchWithAuth } from '@/lib/fetch-with-auth';
+import { isAuthenticated } from '@/lib/api-client';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import './orders.css';
 
-export default function OrderHistoryPage() {
-  const { user } = useUser();
+// Define types for the orders
+interface OrderItem {
+  product: {
+    _id: string;
+    name: string;
+    image: string;
+    price: number;
+  };
+  quantity: number;
+  price: number;
+}
 
-  const { data: orders, isLoading } = useQuery({
-    queryKey: ["myOrders"],
-    queryFn: async () => {
-      const response = await fetchWithAuth("/orders/myorders");
-      return response.json();
-    },
-    enabled: !!user, // Only run the query if the user exists
-  });
+interface Order {
+  _id: string;
+  orderItems: OrderItem[];
+  paymentMethod: string;
+  shippingAddress: {
+    address: string;
+    city: string;
+    postalCode: string;
+    country: string;
+  };
+  totalPrice: number;
+  status: string;
+  createdAt: string;
+}
 
-  if (!user) {
+// Create a client-only component with no SSR to prevent prerendering errors
+function ProfileOrdersContent() {
+  // Use state to store orders
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  // This useEffect will only run in the browser after hydration
+  useEffect(() => {
+    const checkAuthAndFetchOrders = async () => {
+      // Check if the user is authenticated
+      if (!isAuthenticated()) {
+        router.push('/login?redirect=/profile/orders');
+        return;
+      }
+
+      try {
+        // Fetch orders
+        const response = await fetchWithAuth('/orders/my-orders');
+        const data = await response.json();
+        setOrders(data);
+      } catch (err) {
+        console.error('Error fetching orders:', err);
+        setError('Failed to load orders. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuthAndFetchOrders();
+  }, [router]);
+
+  // Handle loading state
+  if (loading) {
     return (
-      <div className="container text-center py-5">
-        <h2>არ ხართ ავტორიზებული</h2>
-        <p>შეკვეთების სანახავად გაიარეთ ავტორიზაცია</p>
-        <Link 
-          href="/login" 
-          className="btn btn-primary"
-        >
-          ავტორიზაცია
-        </Link>
+      <div className="orders-container">
+        <h1 className="orders-title">ჩემი შეკვეთები</h1>
+        <div className="loading-indicator">იტვირთება...</div>
       </div>
     );
   }
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  // Handle error state
+  if (error) {
+    return (
+      <div className="orders-container">
+        <h1 className="orders-title">ჩემი შეკვეთები</h1>
+        <div className="error-message">{error}</div>
+      </div>
+    );
   }
 
-  if (!orders || orders.length === 0) {
+  // No orders found
+  if (orders.length === 0) {
     return (
-      <div className="max-w-7xl mx-auto py-10">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-2">
-            შეკვეთების ისტორია ცარიელია
-          </h2>
-          <p className="text-gray-600">თქვენ ჯერ არ გაგიკეთებიათ შეკვეთა</p>
+      <div className="orders-container">
+        <h1 className="orders-title">ჩემი შეკვეთები</h1>
+        <div className="no-orders">
+          <p>თქვენ ჯერ არ გაქვთ შეკვეთები</p>
+          <Link href="/shop" className="shop-now-button">
+            ნახე პროდუქტები
+          </Link>
         </div>
       </div>
     );
   }
 
+  // Render orders
   return (
-    <div className="">
-      <div className="max-w-7xl mx-auto py-10">
-        <OrderHistory orders={orders} />
+    <div className="orders-container">
+      <h1 className="orders-title">ჩემი შეკვეთები</h1>
+      
+      <div className="orders-list">
+        {orders.map((order) => (
+          <div key={order._id} className="order-card">
+            <div className="order-header">
+              <h3 className="order-number">შეკვეთა #{order._id.substring(0, 8)}</h3>
+              <span className="order-date">
+                {new Date(order.createdAt).toLocaleDateString('ka-GE')}
+              </span>
+            </div>
+            
+            <div className="order-status">
+              <span className={`status-badge status-${order.status.toLowerCase()}`}>
+                {order.status}
+              </span>
+            </div>
+            
+            <div className="order-items">
+              {order.orderItems.map((item, index) => (
+                <div key={index} className="order-item">
+                  <span className="item-name">{item.product.name}</span>
+                  <span className="item-quantity">x{item.quantity}</span>
+                  <span className="item-price">{item.price} ₾</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="order-footer">
+              <span className="order-total">სულ: {order.totalPrice} ₾</span>
+              <Link href={`/profile/orders/${order._id}`} className="view-details-button">
+                დეტალების ნახვა
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
+}
+
+// Dynamically import the content component with SSR disabled
+// This prevents the component from being executed during static build
+const OrdersContentWithNoSSR = dynamic(() => Promise.resolve(ProfileOrdersContent), {
+  ssr: false,
+});
+
+// Export a simple wrapper that uses the dynamic component
+export default function ProfileOrdersPage() {
+  return <OrdersContentWithNoSSR />;
 }

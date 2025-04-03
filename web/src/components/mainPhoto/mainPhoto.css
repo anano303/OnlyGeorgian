@@ -15,10 +15,22 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end; /* Changed from 'end' to 'flex-end' */
   margin-bottom: 150px;
   z-index: 1; /* Lower z-index to ensure dropdown is above */
   overflow: visible; /* Ensure it does not clip child elements */
+}
+
+.mainWrapper {
+  padding: 0;
+  color: rgb(0, 0, 0);
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  justify-content: flex-end; /* Changed from 'end' to 'flex-end' */
+  font-family: "DM Sans", sans-serif;
 }
 
 .mainOfferImages {
