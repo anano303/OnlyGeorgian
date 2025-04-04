@@ -13,51 +13,63 @@ import UserMenu from "./user-menu";
 import SearchBox from "../SearchBox/search-box";
 
 export default function Header() {
-  const [isNavOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
-  // const toggleNav = () => {
-  //   setIsNavOpen((prevState) => !prevState); // Toggle navigation visibility
-  // };
-
-
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <header className={`header paper-texture ${isNavOpen ? "mobile-nav-active" : ""}`}>
-      <div className="logo">
-        <div className="menu">
-          <Image src={menu} 
-          alt="menu"
-          width={48}
-          style={{ height: "auto" }}
-           />
-        </div>
-        <Link href="/">
-          <Image
-            src={logo}
-            width={161}
+    <>
+      <header className={`header paper-texture ${isMenuOpen ? "mobile-menu-active" : ""}`}>
+        <div className="logo">
+          <div className="menu" onClick={toggleMenu}>
+            <Image src={menu} 
+            alt="menu"
+            width={48}
             style={{ height: "auto" }}
-            alt="logo soulArt"
-          />
-        </Link>
-      </div>
-     
-     <SearchBox />
-      <div className="auth-cart">
-        <div className="d-none">
-          <UserMenu />
+            />
+          </div>
+          <Link href="/">
+            <Image
+              src={logo}
+              width={161}
+              style={{ height: "auto" }}
+              alt="logo soulArt"
+            />
+          </Link>
         </div>
-
-        <CartIcon />
+       
+        <div className="search-wrapper desktop-only">
+          <SearchBox />
+        </div>
+        
+        <div className="auth-cart desktop-only">
+          <div className="d-none">
+            <UserMenu />
+          </div>
+          <CartIcon />
+        </div>
+        
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-menu-content">
+            <div className="mobile-menu-item">
+              <UserMenu />
+            </div>
+            <div className="mobile-menu-item">
+              <CartIcon />
+            </div>
+          </div>
+        </div>
+      </header>
       
+      {/* Mobile search container that appears below header */}
+      <div className="mobile-search-container">
+        <div className="search-wrapper">
+          <SearchBox />
+        </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {/* <div className="mobile-nav-btn" onClick={toggleNav}>
-        <span className={`hamburger-icon ${isNavOpen ? "close" : ""}`}>
-          {isNavOpen ? "×" : "☰"}
-        </span>
-      </div> */}
-    </header>
+    </>
   );
 }

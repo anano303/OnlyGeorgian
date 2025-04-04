@@ -25,7 +25,6 @@
   pointer-events: none; /* რომ კლიკები არ დაბლოკოს */
 }
 
-
 header {
   display: flex;
   justify-content: space-between;
@@ -33,7 +32,6 @@ header {
   padding: 10px 8%;
 // background: linear-gradient(180deg, #E0C9A6 0%, #A86E16 100%);
 // background-color: #a6a491;
-
 
   .logo {
     display: flex;
@@ -45,6 +43,10 @@ header {
       font-size: 24px;
       font-weight: bold;
       color: #f2ebeb;
+    }
+
+    .menu {
+      cursor: pointer;
     }
   }
 
@@ -86,6 +88,19 @@ header {
 
   /* Mobile responsiveness */
   @media (max-width: 811px) {
+    position: relative;
+    flex-wrap: nowrap;
+
+    .logo {
+      flex: 1;
+      justify-content: space-between;
+      width: auto;
+    }
+
+    .search-wrapper {
+      display: none; /* Hide the search wrapper inside header on mobile */
+    }
+
     .main-nav ul {
       display: flex;
       flex-direction: column;
@@ -146,5 +161,85 @@ header {
         font-size: 1.875rem;
       }
     }
+
+    .desktop-only {
+      display: none;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(166, 164, 145, 0.95);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      z-index: 100;
+
+      &.open {
+        max-height: 300px;
+      }
+
+      .mobile-menu-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .mobile-menu-item {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    &.mobile-menu-active .mobile-menu {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+/* Search box responsive styles */
+.search-wrapper {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 15px;
+  
+  @media (max-width: 811px) {
+    max-width: none;
+    flex-basis: 90%;
+    margin: 15px auto;
+  }
+}
+
+/* Mobile search container that appears below header */
+.mobile-search-container {
+  display: none;
+  
+  @media (max-width: 811px) {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #950101;
+    
+    .search-wrapper {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      max-width: none;
+    }
+  }
+}
+
+/* Desktop only elements */
+@media (min-width: 812px) {
+  .mobile-menu {
+    display: none;
   }
 }
