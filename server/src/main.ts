@@ -15,16 +15,20 @@ async function bootstrap() {
   app.use(helmet());
   app.use(cookieParser());
 
-  // Configure CORS
+  // Configure CORS with more flexible origins
   app.enableCors({
     origin: [
       'https://only-georgian.vercel.app',
       'https://www.only-georgian.vercel.app',
-      'http://localhost:3000'
+      'http://localhost:3000',
+      'https://localhost:3000',  // Added HTTPS local frontend
+      'http://localhost:4000',   // Added HTTP local backend
+      'https://localhost:4000',  // Added HTTPS local backend
+      /localhost/               // Fallback pattern for any localhost
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization', 'forum-id']
+    allowedHeaders: ['Content-Type', 'Authorization', 'forum-id', 'Origin', 'Accept']
   });
 
   app.enableVersioning({

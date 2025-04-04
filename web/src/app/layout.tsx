@@ -12,7 +12,7 @@ import Header from "@/components/header/header";
 import SiteTimer from "@/components/SiteTimer/SiteTimer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_API_URL || 'https://only-georgian.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_CLIENT_URL || 'https://only-georgian.vercel.app'),
   title: "OnlyGeorgian",
   description:
     "OnlyGeorgian - მხოლოდ საქართველოში წარმოებული პროდუქციის ონლაინ პლატფორმა, სადაც შეგიძლიათ გაყიდოთ და შეიძინოთ მხოლოდ ქართული პროდუქცია",

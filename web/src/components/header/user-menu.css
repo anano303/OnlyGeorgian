@@ -115,10 +115,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .dropdown-menu {
+  /* .dropdown-menu {
     position: static;
     transform: translateY(-50%);
-  }
+  } */
   .icon {
     z-index: 0;
   }
