@@ -61,16 +61,17 @@ export function LoginForm() {
             router.push(returnUrl);
           } else {
             // Login was processed but returned an error
-            setLoginError(response.error || "ავტორიზაცია ვერ მოხერხდა");
+            const errorMessage = response.error || "ავტორიზაცია ვერ მოხერხდა";
+            setLoginError(errorMessage);
             toast({
               title: "ავტორიზაციის შეცდომა",
-              description: response.error || "ავტორიზაცია ვერ მოხერხდა",
+              description: errorMessage,
               variant: "destructive"
             });
           }
         },
         onError: (error) => {
-          // Error from API call
+          
           const errorMessage = error instanceof Error 
             ? error.message 
             : "ავტორიზაცია ვერ მოხერხდა";
